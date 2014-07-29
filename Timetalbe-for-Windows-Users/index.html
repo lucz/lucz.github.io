@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+	<head>
+		<meta charset='utf-8'>
+		<title>Windows 裝機事項</title>
+		<link rel="icon" href="/Assets/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="/Assets/favicon.ico" type="image/x-icon" />
+		<link rel="Bookmark" href="/Assets/favicon.ico">
+		<link href="/Assets/style.css" type="text/css" rel="stylesheet">
+		<link href="/Assets/pygments.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div id="container">
+			<h1>Windows 裝機事項</h1><br />
+<p>本文嘗試梳理 Windows 系統安裝的前前後後，算是一種小結。</p>
+
+<h2>時機</h2>
+
+<p>瘟到死 (Windows) 是一系列充滿尿性的系統。系統都具有一定的尿性，但一般的 Linux 系統在正式版發行時就不大尿了，而 M$ 家最有個性，他的尿性保質期特長，以至於正式版都出了，還那麼尿。<br/>
+一、瘟到死自己尚未完善。比如我試用了 Windows 8 ，一個最尿的地方就是，當我瀏覽一陣網頁，要切換到文件夾開點文件的時候，屏幕會黑一下。有時，甚至鼠標指向任務欄，都會導致屏幕黑一下的情況。我的顯卡驅動裝得妥妥的，而且 Windows 7 和 XP 都沒問題，這就說明是 Windows 8 對我的硬件支持不好。一般而言，瘟到死的各種大型 bug 一直要等到 SP1 出來纔解決。<br/>
+二、各大軟件公司尚未適應。雖然之前 M$ 已經發了各種預覽版、洩漏版，但這不代表所有軟件公司都已適應。比如騰訊，由於 Windows 8 的任務管理器使用了 tm.exe ，結果騰訊沒適應過來，比較商務的 TM2009 無法使用。<br/>
+三、用戶一時無法適應。 M$ 是一家不太尊重用戶習慣的公司，每次更新，都會把很多基本操作做得天翻地覆，讓人眼花繚亂。比如這回把開始菜單給廢了。由於 M$ 是鼠標操作爲主的系統，使用者水平越高，原有印象就越深，也就越難適應新版系統。<br/>
+四、網上組織尚未達成最符合用戶普遍需求的共識，甚至未找到合理的破解模式。最方便安裝的 Windows 就是 Ghost 版的（不過有一定風險）。用正版 Windows 安裝碟來安裝，一般需要超過一小時的時間，而且很多驅動還沒裝好。而 Ghost 一般十來分鐘就裝好，還裝上了基本的驅動，甚至還包含了 VC, VB, DirectX 等支持庫，做了一些基本的設置，比如破解主題、修改最大連接數。用戶在磨合，軟件公司在磨合，封裝組織當然也在磨合。這個磨合沒有一兩年怕也搞不定。<br/>
+五、有時瘟到死會自動被歷史淘汰。 M$ 出系統，往往不能一蹴而就，這也就算了，有時系統根本不接受，紛紛期待下一款系統。比如 Windows 2000, Vista, 一款瘟到死有可能沒成熟就死了，如果傻乎乎的等待，最後可能祇是失望。<br/>
+有鑒於以上幾種原因，瘟到死系統應該在 SP1 出來後一段時間，進入爲期約五六年的黃金期。這時候，該款系統的市場佔有率如果沒有超過二成，說明該系統沒有得到用戶認可，屬於廢品。但如果達到了四成，證明該系統已經比較完善，是可以入手的。這時社會各界，包括用戶、軟件公司和破解組織，均充分認可之，該系統存在的兼容性等方面問題應已得到妥善處理，用戶入手時不會感到過於困惑。以 Windows 7 爲例， 2009 年上市， 2011 年出 SP1 ， 2012 年份額過半，因此 2012 年開始進入黃金期。</p>
+
+<h2>版本</h2>
+
+<p>Windows 每一代都有很多版本，說好聽點叫分工明確，說不好聽點叫屌絲富二代都想痛宰。
+民用版本分爲家庭基礎、家庭高級、專業、旗艦（這個到了後來又有不同表述，不過意思差不多），而服務器版更多，到了 2008 r2 ，竟然有標準、 Web 、 HPC 、企業、數據中心、 Itanium 六版本。一般破解版都會追求高檔，所以絕大多數都是旗艦版。不過上上官網就知道，其實專業和旗艦的區別很小，主要就是多國語言和加密，所以專業版完全是足夠的。但家庭版的向下兼容性就不如專業版，因而不足取。服務器版方面，數據中心、 HPC 和 Itanium 對於一般用戶來說沒有意義——因爲我們沒有相應設備。剩下的 Web 可以看作是一個高度精簡版，企業版在功能上跟數據中心版基本保持一致，而標準版則比較中庸。好在服務器版本來就很貴，閹割程度不高，即使 Web 版也很犀利。
+這樣還沒選完，還要選位數。這個就看內存了， 4GB 以下就 32 位，以上就 64 位。不過服務器版從 2008 r2 就沒有 32 位了。當然了，如果內存不足，也別玩比較新的服務器版本。 8GB 是標配，低於這個就是屌絲了。</p>
+
+<h2>封裝模式</h2>
+
+<p>這就結束了嗎？遠遠沒有。因爲中國人一般都用盜版，而盜版的選擇當然遠多於正版。</p>
+
+<h4>原版碟</h4>
+
+<p>這是最最原始的方法，兼容性無敵，但是速度最慢。特別是光碟安裝，光碟那龜速，你懂的。這都固態硬盤時代了……</p>
+
+<h4>Ghost</h4>
+
+<p>XP 時代最流行的方法，原理是把發佈者的系統盤直接複製到用戶的系統盤。速度非常快，裝完系統，倒騰好驅動，最多半小時。不過兼容性有點問題。</p>
+
+<h4>Wim</h4>
+
+<p>Wim 跟 Ghost 非常接近，但他是微軟官方的方式。有的人在自己的電腦裝好、優化好之後再使用官方工具重新封裝成類似原版碟的東西。這樣，既帶有作者的個人優化，又具有較高的兼容性。</p>
+
+<h2>提供方</h2>
+
+<p>系統這麼大，能裝多少病毒不用說了。有的提供方綁定個瀏覽器主頁什麼的，還不許修改。
+這時候，提供方的人品就顯得非常重要。因此，找到一個人氣不算太差，並且穩定更新一段時間的提供方，就顯得相當重要。
+一般而言，裝機版都會綁個主頁，純淨版看情況，精簡版基本不綁。不過裝機版的更新頻次肯定最高，而精簡版需要很大精力，所以更新頻次最低。
+不論哪個版本，網上有過修改的，一般都比沒修改的好用。破解主題，管理員權限，安裝支持庫，附帶萬能驅動，這些不難但就是費時的事情都有人幫你做了，倒是不錯。特別是精簡版，他還爲你節約硬盤，把示例庫、輸入法、垃圾遊戲之類都刪掉，頓時瘦身一半以上。不過精簡過頭當然也不行。</p>
+
+<h2>安裝方式</h2>
+
+<h4>光碟</h4>
+
+<p>這是最原始的方式，也是正版系統的常見方式。</p>
+
+<h4>硬盤</h4>
+
+<p>想要硬盤安裝，需要硬盤裏已經安裝了一個系統，然後通過各種方式安裝系統。
+第一種是使用 Ghost 來裝第二個，現在已經有很多工具了，相當方便。
+第二種是用虛擬光驅來模擬光碟，然後安裝。這樣會裝出雙系統。看喜歡不喜歡了。</p>
+
+<h4>USB</h4>
+
+<p>如果硬盤裏沒系統，又不想花錢買光驅，就用 USB 好了。
+首先要把 BIOS 的第一啓動設置爲 USB 。
+然後根據自己的情況，要麼開一個 PE 裝系統，要麼直接把系統放進 USB 再安裝。</p>
+
+<h2>「優化」</h2>
+
+<p>雖然微軟認爲自己的優化很完美了，但玩家仍然可以以任何理由進行批評，然後自己亂改一通。這些修改對於微軟而言，當然全部都是不合理的，但是對於我們來說，當然有其合理性。</p>
+
+<h4>體積</h4>
+
+<p>首先，由於微軟的設計帶有普適性，所以很多功能對於一般用戶並不常用。比如多國語言、字體、加密、還原等。
+其次，有些東西，微軟提供了多種選擇，但我們往往衹需要一種，或者都不需要，用別家。比如遊戲、多媒體、輸入法等。</p>
+
+<h4>支持庫</h4>
+
+<p>儘管微軟自認爲非常普適了，其實還是不夠普適。比如 .Net Framework ， XP 衹到 2.0 ， Windows 7 衹到 3.5 ，最新都 4.5 了。還有 VC 2005, 2008, 2012 等，也是非常常用的支持庫。另外打遊戲的話， DirectX 也需要安裝。</p>
+
+<h4>權限</h4>
+
+<p>比較新版的系統裏，對於權限的設置非常低，默認情況下，管理員甚至不能隨心所欲的刪除文件。這種肏蛋的設定當然要改掉。</p>
+
+<h4>驅動</h4>
+
+<p>最穩妥的辦法是官網下載驅動，但是很多人比較懶惰，都會使用萬能驅動。
+32 位的系統用萬能也就算了， 64 位系統兼容 32 位，但顯然 64 位驅動會更好。</p>
+
+
+<div id="co-in">
+	<div id="comments"><div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'inrely';
+	//var disqus_identifier = '/Timetalbe-for-Windows-Users';
+	//var disqus_url = '/Timetalbe-for-Windows-Users';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script></div>
+	<div id="post-info">發佈於<br />2012-12-28<br /><br />
+分類<br />
+
+<span class="tag"><a href="/categories.html#挨踢">挨踢</a></span>
+<br /><br />
+標籤<br />
+
+<span class="tag"><a href="/tags.html#亂彈">亂彈</a></span>
+
+<span class="tag"><a href="/tags.html#電腦">電腦</a></span>
+</div>
+</div>
+		</div>
+		<footer><script src="http://api.html5media.info/1.1.5/html5media.min.js"></script>
+<script>audiojs.events.ready(function() {var as = audiojs.createAll();});</script>
+<script type="text/javascript">$(document).ready(function(){$("a[rel='external'],a[rel='external nofollow']").click(function(){window.open(this.href);return false})})</script>
+<a href="/">奚適而惡乎待哉</a> | <a href="/about">存中</a> &copy 2005-2014 CC NC-ND | <a href="https://github.com/821/821.github.com">源碼</a> <a href="/archive">全站快讀</a> | <a href="/Projects">項目</a><br />
+<a href="/categories#勿忘在莒">勿忘在莒<span class="upper">4</span></a> <a href="/categories#自選集">自選集<span class="upper">21</span></a> <a href="/categories#網誌">網誌<span class="upper">74</span></a> <a href="/categories#隻言片語">隻言片語<span class="upper">3</span></a> <a href="/categories#挨踢">挨踢<span class="upper">11</span></a>  <a href="/Notes">筆記</a></footer>
+	</body>
+</html>

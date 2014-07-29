@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+	<head>
+		<meta charset='utf-8'>
+		<title>CADAL 下載入門篇</title>
+		<link rel="icon" href="/Assets/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="/Assets/favicon.ico" type="image/x-icon" />
+		<link rel="Bookmark" href="/Assets/favicon.ico">
+		<link href="/Assets/style.css" type="text/css" rel="stylesheet">
+		<link href="/Assets/pygments.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div id="container">
+			<h1>CADAL 下載入門篇</h1><br />
+<div id="indexedcontent"><h2><span class="caps">CADAL</span> 簡介</h2>
+<p>別的不用知道，反正記住， <span class="caps">CADAL</span> 是中國和美國聯合投入一些納稅人的錢做成的，有數以百萬計 2005 年之前出版的書和論文。書籍以 DjVu 格式存儲，淸晰度還可以。 <span class="caps">CADAL</span> 曾向社會公衆開放，但現在關了，僅供若干高校閱讀，但是衹要掌握規律，任何人都可以下載一部分 <span class="caps">CADAL</span> 書籍——但這裏介紹的方法衹能用於下載部分書籍，主要是一些民國書和古籍——剛好就是 <span class="caps">CADAL</span> 的強項。<br />
+相比起來， <span class="caps">CADAL</span> 有這些優勢：首先，掃描的分辨率高達 600dpi ，是業界最高的；其次，除了部分特殊情況，他的書沒有水印，而且衹要能下載，全書都是 300dpi 的，沒有超星那樣愛耍小心計； <span class="caps">CADAL</span> 比較肯用心，所以書籍有書籤的機率比較大，卽使不下載 <span class="caps">CADAL</span> 的書，也可以在他這裏下載書籤；最重要的是，儘管多數書籍重疊，但 <span class="caps">CADAL</span> 還是有不少獨有書籍的，也是網絡上一個很重要的電子書來源，可以說，掌握了超星和 <span class="caps">CADAL</span> ，就掌握了 95% 的中文電子書。<br />
+本文以一部叫「<a href="http://www.cadal.zju.edu.cn/book/03000729" rel="external">莊子天下篇講疏</a>」的書爲例，解釋如何下載。</p>
+<h2>高校 IP</h2>
+<p>哼，沒上過北大，難道還不能上北大的代理？<br />
+不過我上過兩個南大，卻沒上過任何一個南大的代理……<br />
+趕快找論壇搞個帳號罷！提示：本站某頁面，就有通向四個很多這種帳號的論壇的鏈接。文明的讀書人不要偷看人家郵件，更不要改密碼！</p>
+<h2>下載</h2>
+<h3>提取書號 <code>BookNum</code></h3>
+<p>搜索所要書籍，「閱讀」是個形如 http://www.cadal.zju.edu.cn/book/03000729 的鏈接，最後的八位數字就是書號。在這個例子當中，八位書號 <code>BookNum</code> 就是 <code>03000729</code> 。</p>
+<h3>判定書籍類別 <code>BookType</code></h3>
+<p><span class="caps">CADAL</span> 內部將書籍分成以下幾種：<br />
+古籍 <code>anc</code><br />
+民國圖書 <code>minguo</code><br />
+民國期刊 <code>minguoqikan</code><br />
+期刊 <code>qikan</code><br />
+現代圖書 <code>book</code><br />
+敦煌古籍 <code>dunhuang</code><br />
+英文 <code>eng</code><br />
+學位論文 <code>deg</code><br />
+書法 <code>shufa</code></p>
+<p>這本書的類別顯然是民國圖書，也就是 <code>minguo</code> 。公衆可以多猜幾次，如果擁有高校 IP ，可以先註冊一個免費帳號，然後進入閱讀頁面，使用 Firebug 之類的瀏覽器插件看網頁源代碼，裏面有個叫 <code>BookType</code> 的參數，就是這本書的內部分類了。</p>
+<h3>獲取書籍頁碼 <code>TotalPage</code></h3>
+<p>公衆需要猜測一個大於書籍總頁數的數字，擁有高校 IP 則可以在網頁源代碼中找到 <code>TotalPage</code> 參數。<br />
+莊子天下篇講疏一共有 <code>161</code> 頁。</p>
+<h3>構造眞實鏈接</h3>
+<p>好了，現在我們要找出眞實鏈接了。事實上，這本書的眞實鏈接是：<br />
+http://210.32.137.91/dlib5/ebooks/minguo/03/001000/03000729/ptiff/00000001.djvu<br />
+http://210.32.137.91/dlib5/ebooks/minguo/03/001000/03000729/ptiff/00000002.djvu<br />
+&#8230;&#8230;<br />
+http://210.32.137.91/dlib5/ebooks/minguo/03/001000/03000729/ptiff/00000161.djvu<br />
+是的， <span class="caps">CADAL</span> 和超星一樣，每頁一個文件。<br />
+那麼規律是什麼呢？<br />
+<code>http://210.32.137.91/</code> 這一串基本上是固定的。<br />
+<code>dlib5/ebooks</code> 這個 <code>dlib5</code> 從 <code>dlib</code> 開始，接着是 <code>dlib2</code>, <code>dlib3</code>, <code>dlib4</code>, <code>dlib5</code>, <code>dlib6</code> ，之後是 <code>newebooks7</code>, <code>newebooks8</code>, <code>newebooks9</code>, <code>newebooks10</code>, <code>newebooks11</code><br />
+<code>ebooks</code> 不變。<br />
+<code>minguo</code> 就是 <code>BookType</code> 參數。<br />
+<code>03/001000/03000729</code> 看起來有點複雜，其實 <code>03000729</code> 就是之前獲取的 <code>BookNum</code> ， <code>03</code> 是 <code>BookNum</code> 的前二位， <code>001000</code> 是 <code>BookNum</code> 的第 3-5位 加 1 ，後面添上 000 。<br />
+<code>ptiff</code> 不變<br />
+<code>00000161</code> 之類的，是八位數字，從 1 一直到 <code>TotalPage</code> 。<br />
+構建好鏈接後，用第一頁逐一放進瀏覽器或用 FlashGet 批量測試，如果能下載 djvu ，就是眞實地址，可應用於全書頁面。<br />
+由於 <code>dlib</code> 比較多可能性， <code>BookType</code> 也可能搞錯，還是需要試挺多次的。</p>
+<h3>批量下載鏈接</h3>
+<p>要一個個下？沒那麼煩。<br />
+用 FlashGet ，任務-添加成批任務-把鏈接改成形如 http://210.32.137.91/dlib5/ebooks/minguo/03/001000/03000729/ptiff/(*).djvu 的，選擇 <code>8</code> 位，塡上從 <code>1</code> 到 <code>TotalPage</code> 搞定。</p>
+<h3>下載書籤</h3>
+<p>有的書會有書籤。將鏈接改動一下就是書籤的地址了。<br />
+http://210.32.137.91/dlib5/ebooks/minguo/03/001000/03000729/meta/Catalog.xml</p>
+<h2>整理</h2>
+<p>個人認爲整理是比較重要的，因爲下載了一堆散碎的文件，分散着放對硬盤不好，剪切複製速度慢，還容易亂。因而主要有兩種整理方式：改名爲 pdg 並打包，以及合倂爲一個大的 DjVu 文件。<br />
+當然還可以把他轉成 <span class="caps">PDF</span> 或者某圖片格式，不過我就不討論了。</p>
+<h3>合倂</h3>
+<p>合倂很簡單，目前最方便還是用 <code>DjVuToy</code> 。<br />
+合倂的缺點是，合倂後的文件如果比較大打開起來就會慢一些，而且畢竟是破壞了下載到的文件。</p>
+<h3>打包 pdg</h3>
+<p>首先有 <code>TotalCMD</code> 之類的工具，批量將 8 位文件名轉成 6 位，並把擴展名改成 pdg 。<br />
+然後按文件夾打包 zip 就行了。這個過程中可以把 <code>Catalog.xml</code> 書籤轉成超星模式掛上去。</p></div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script><script type="text/javascript">
+	$(document).ready(function(){
+			var isMobile = {
+				Android: function() {
+					return navigator.userAgent.match(/Android/i);
+				}
+				,BlackBerry: function() {
+					return navigator.userAgent.match(/BlackBerry/i);
+				}
+				,iOS: function() {
+					return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+				}
+				,Opera: function() {
+					return navigator.userAgent.match(/Opera Mini/i);
+				}
+				,Windows: function() {
+					return navigator.userAgent.match(/IEMobile/i);
+				}
+				,any: function() {
+					return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+				}
+			};
+
+		$('.entry a').each(function(index,element){
+			var href = $(this).attr('href');
+			if(href){
+				if(href.indexOf('#') == 0){
+				}else if ( href.indexOf('/') == 0 || href.toLowerCase().indexOf('821.github.com')>-1 ){
+				}else if ($(element).has('img').length){
+				}else{
+					$(this).attr('target','_blank');
+					$(this).addClass('external');
+				}
+			}
+		});
+
+		if($('h2').length > 2 && !isMobile.any()){
+			var h2 = [],h3 = [],tmpl = '<ul>',h2index = 0;
+
+			var findScrollableElement = function(els) {
+				for (var i = 0, argLength = arguments.length; i < argLength; i++) {
+					var el = arguments[i],
+					$scrollElement = $(el);
+					if ($scrollElement.scrollTop() > 0) {
+						return $scrollElement;
+					} else {
+						$scrollElement.scrollTop(1);
+						var isScrollable = $scrollElement.scrollTop() > 0;
+						$scrollElement.scrollTop(0);
+						if (isScrollable) {
+							return $scrollElement;
+						}
+					}
+				}
+				return [];
+			};
+
+			$.each($('h2,h3'),function(index,item){
+				if(item.tagName.toLowerCase() == 'h2'){
+					var h2item = {};
+					h2item.name = $(item).text();
+					h2item.id = 'menuIndex'+index;
+					h2.push(h2item);
+					h2index++;
+				}else{
+					var h3item = {};
+					h3item.name = $(item).text();
+					h3item.id = 'menuIndex'+index;
+					if(!h3[h2index-1]){
+						h3[h2index-1] = [];
+					}
+					h3[h2index-1].push(h3item);
+				}
+				item.id = 'menuIndex' + index
+			});
+
+			for(var i=0;i<h2.length;i++){
+				tmpl += '<li><a href="#" data-id="'+h2[i].id+'">'+h2[i].name+'</a></li>';
+				if(h3[i]){
+					for(var j=0;j<h3[i].length;j++){
+						tmpl += '<li class="h3"><a href="#" data-id="'+h3[i][j].id+'">'+h3[i][j].name+'</a></li>';
+					}
+				}
+			}
+			tmpl += '</ul>';
+
+			var $scrollable = findScrollableElement('body','html');
+			$('body').append('<div id="menuIndex"></div>');
+			$('#menuIndex').append($(tmpl)).delegate('a','click',function(e){
+				e.preventDefault();
+				var scrollNum = $(this).attr('data-top') || $('#'+$(this).attr('data-id')).offset().top;
+				//window.scrollTo(0,scrollNum-30);
+				$scrollable.animate({ scrollTop: scrollNum-30 }, 400, 'swing');
+			})
+
+			$(window).load(function(){
+				var scrollTop = [];
+				$.each($('#menuIndex li a'),function(index,item){
+					if(!$(item).attr('data-top')){
+						var top = $('#'+$(item).attr('data-id')).offset().top;
+						scrollTop.push(top);
+						$(item).attr('data-top',top);
+					}
+				});
+
+				$(window).scroll(function(){
+					var nowTop = $(window).scrollTop(),index,length = scrollTop.length;
+					if(nowTop+60 > scrollTop[length-1]){
+						index = length
+					}else{
+						for(var i=0;i<length;i++){
+							if(nowTop+60 <= scrollTop[i]){
+								index = i
+								break;
+							}
+						}
+					}
+					$('#menuIndex li').removeClass('on')
+					$('#menuIndex li').eq(index).addClass('on')
+				});
+			});
+			//用js计算屏幕的高度
+			$('#menuIndex').css('max-height',$(window).height()-80);
+		}
+	});
+</script>
+
+<div id="co-in">
+	<div id="comments"><div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'inrely';
+	//var disqus_identifier = '/CADAL/';
+	//var disqus_url = '/CADAL/';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script></div>
+	<div id="post-info">發佈於<br />2014-07-23<br /><br />
+分類<br />
+<br /><br />
+標籤<br />
+</div>
+</div>
+		</div>
+		<footer><script src="http://api.html5media.info/1.1.5/html5media.min.js"></script>
+<script>audiojs.events.ready(function() {var as = audiojs.createAll();});</script>
+<script type="text/javascript">$(document).ready(function(){$("a[rel='external'],a[rel='external nofollow']").click(function(){window.open(this.href);return false})})</script>
+<a href="/">奚適而惡乎待哉</a> | <a href="/about">存中</a> &copy 2005-2014 CC NC-ND | <a href="https://github.com/821/821.github.com">源碼</a> <a href="/archive">全站快讀</a> | <a href="/Projects">項目</a><br />
+<a href="/categories#勿忘在莒">勿忘在莒<span class="upper">4</span></a> <a href="/categories#自選集">自選集<span class="upper">21</span></a> <a href="/categories#網誌">網誌<span class="upper">74</span></a> <a href="/categories#隻言片語">隻言片語<span class="upper">3</span></a> <a href="/categories#挨踢">挨踢<span class="upper">11</span></a>  <a href="/Notes">筆記</a></footer>
+	</body>
+</html>

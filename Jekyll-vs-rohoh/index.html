@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+	<head>
+		<meta charset='utf-8'>
+		<title>Jekyll vs ruhoh</title>
+		<link rel="icon" href="/Assets/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="/Assets/favicon.ico" type="image/x-icon" />
+		<link rel="Bookmark" href="/Assets/favicon.ico">
+		<link href="/Assets/style.css" type="text/css" rel="stylesheet">
+		<link href="/Assets/pygments.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div id="container">
+			<h1>Jekyll vs ruhoh</h1><br />
+<div id="indexedcontent"><h2>概述</h2>
+<p>經過一番糾結，我還是決定把網站程序從 ruhoh 轉到 Jekyll 。<br />
+先說一下二者的關係罷。 Jekyll 是目前最知名的一款靜態網站生成器，但是他更多的是爲程序猿設計，所以上手不易。於是，一個叫 Plusjade 的人開發了一個 Jekyll 模版，名曰 Jekyll-Bootstrap ，還開發了一些插件。後來， Plusjade 覺得 Jekyll-Bootstrap 不夠完美，就開發了 ruhoh ，代碼完全重構。我剛「入行」時，在網上看到不少人相當看好 ruhoh ，而且這貨確實比較容易上手，就用了，但最近不滿於一些情況，就轉到了 Jekyll 。順帶一提的是還有一個叫 Octopress 的東西，無法通過 GitHub 直接生成，且其插件用途不大，個人認爲毫無優勢。<br />
+如果用房子來打比方，託管 blog 就像市中心旅館，但你不能裝修（只有少量模版），常有警察查房（你懂的），每天晚上還有人打電話問你要不要特殊服務（廣告），如果想搬家，旅館還會扣下你自己添置的家具（別人的留言往往無法轉移）。 Wordpress 或 Movable Type 之類像郊區購的精品房，可以自己再改造，但交通不便（動態網站就是慢，所以你經常會看見 Wordpress 用戶討論優化和偽靜態，但是從來聽不到靜態網站的用戶討論），而且房價很高（對服務器要求高），難搬家（要搬數據庫），常有盜竊案發生（易被黑客入侵），遇到天災時會很慘（所以要注意備份）。 ruhoh 像市中心粗裝修商品房，水電網比較便利，交通也不錯，還挺好搬家，就是樣板少點，想漂亮點要花不少功夫。 Jekyll 則是給你一塊市中心的土地，還有很多磚瓦，房子自己起，一切都是你的，隨時可以搬家，在你之前已經有很多人起了房子，你可以直接複製他們的房子來用。<br />
+這樣抽象的描述當然不足以說明問題，我們就來分點論述。</p>
+<h2>名字</h2>
+<p>Jekyll 這個名字太酷了——如果你讀過 Dr. Jekyll and Mr. Hyde 的話。<br />
+不過作爲中國人，我堅決不用 Jekyll-Bootstrap ，原因是他的網站 source 裏一堆 JB 。</p>
+<h2>上手和手冊</h2>
+<p>ruhoh 可以說是三分鐘建成的。只要按照官網幾個步驟，再改一下 Disqus 方面的用戶名就可以。 ruhoh 的手冊也很不錯，雖然還有不完善的地方，但按照他所寫，基本能夠實現主題的自定義。<br />
+Jekyll 以不易上手著稱，手冊寫得非常差，官網根本沒有一個好的入門，只有一個不知所謂的 wiki 。好在網上各種入門討論比較多。 Jekyll 本來不能三分鐘建成，但是官方那裏就有很多個人站，直接拿來建站也可以。<br />
+ruhoh 稍勝。</p>
+<h2>結構</h2>
+<p>我不相信做個人站的人完全沒有結構方面的潔癖。 Jekyll 的結構很不好看，有「_」開頭的文件和文件夾。相比之下， ruhoh 就漂亮多了。不過 ruhoh 可能是一定程度上繼承 Jekyll 的緣故，結構仍有不合理的地方，比如他的 partial ，沒有放在主題裏，而是放在根目錄下，這個很詭異。另外實際設置起來，插件的參數要額外設置，這就要鑽進比較深的文件夾，有點鬱悶，反而不如用 Jekyll 方便。<br />
+ruhoh 稍勝</p>
+<h2>社區</h2>
+<p>毫無疑問， Jekyll 完勝。</p>
+<h2>文章代碼支持</h2>
+<p>Jekyll 原生支持多種 markdown, textile ， ruhoh 僅僅支持 markdown 。<br />
+Jekyll 完勝。</p>
+<h2>自定義主題</h2>
+<p>Jekyll 是基於 Liquid 的，功能豐富，但比較難用，官方文檔七零八落，官方也沒有提供模版。<br />
+ruhoh 基於 Mustache ，功能較弱，但容易學習，官方文檔不很完善但還不錯，官方模版也還算全面。<br />
+雖然 ruhoh 更好定制，可事實是， Jekyll 網站千奇百怪，而 ruhoh 千人一面。<br />
+這方面不相上下。</p>
+<h2>前景</h2>
+<p>ruhoh 是 oneman 程序，不過很熱情開發，作者自己介紹，他每個週末都做開發。<br />
+Jekyll 開發組大一點，而且 GitHub 沒理由停止開發。<br />
+Jekyll 稍勝。</p>
+<h2>插件</h2>
+<p>Jekyll 已經有很多插件，不過如果要在 GitHub 上面跑，就不能用插件。<br />
+ruhoh 幾乎沒什麼插件，但 Plusjade 對插件的控制似乎寬鬆些。<br />
+這方面不相上下。</p>
+<h2>編譯部署</h2>
+<p>Jekyll 本地編譯會搞死人，但目前已經支持直接部署在 GitHub 和 Heroku 。<br />
+譬如 Windows 下編譯，中文文章竟然會有 bug ，要在 Jekyll 文件夾下的 <code>\lib\jekyll\convertible.rb</code> 的 <code>self.content = File.read(File.join(base, name))</code> 改爲 <code>self.content = File.read(File.join(base, name), :encoding =&gt; "utf-8")</code> ，以及 <code>\lib\jekyll\tags\include.rb</code> 的 <code>source = File.read(</code>file)@ 改爲 <code>source = File.read(</code>file, :encoding =&gt; &#8220;utf-8&#8221;)@<br />
+ruhoh 本地編譯相對簡單，雲端方面僅支持部署在 GitHub 的 public repo 。<br />
+理論上，所有支持 SSH+Ruby 的 PaaS 都可以安裝這兩款東西，然後運行，比如 OpenShift, Heroku 。<br />
+這方面不相上下。</p>
+<h2>結論</h2>
+<p>功能要求高的，用 Jekyll 。期待快速上手的，用 ruhoh 。<br />
+總體來說，無論是 Jekyll 還是 ruhoh ，他們都是原生的本地寫作方式，文本編輯器操作各種爽快。而且，經過少量時間對 Git 的極初步學習，我也能夠找出最適合自己的方式，做到寫好或改好文章後一鍵免登入更新。這樣極大的提高了我的更新欲，即使一天晚上更新幾十次也絲毫不覺得繁瑣。即使不更新到服務器端，本地更新也比原來放心了很多，是眞正安心免打擾的新型寫作方式。</p>
+<h2>附錄： Jekyll 中階使用總結</h2>
+<h3>大原則</h3>
+<p>一、爲了簡化每次本地系統重裝後的手續，不使用本地編譯， Windows 下用 RailsInstaller 。這還有一個好處，每次發佈文章，都會自動備份。<br />
+二、不使用 Jekyll-Bootstrap 或 Octopress 。這兩樣東西能夠幫你快速上手，但是你的源碼結構會進一步遭到污染，當你想再改進的時候會很麻煩。<br />
+三、多抄襲。爲了把主題做得更美，建議多多抄襲別人的原創主題。<br />
+四、控制好文件夾數量和層級。比如 <span class="caps">CSS</span> 和 JS 這些全站使用的東西，不妨放一個文件夾，以便集中管理。不然以後你自己建立的文件夾一多，就淩亂了。</p>
+<h3>一個便捷化的上傳腳本</h3>
+<p>這是 Windows 版的，如果用 Linux ，去掉 <code>call</code> 。個人建議雙保險，開一個 BitBucket 的 repo 然後同時傳過去。<br />
+<div class="highlight"><pre><code class="language-bat" data-lang="bat"><span class="lineno">1</span> <span class="k">cd</span> Jekyll
+<span class="lineno">2</span> <span class="k">call</span> git add .
+<span class="lineno">3</span> <span class="k">call</span> git add -A
+<span class="lineno">4</span> <span class="k">call</span> git commit -m <span class="s2">&quot;%date:~0,10%&quot;</span>
+<span class="lineno">5</span> <span class="k">call</span> git push git@github.com:821<span class="n">/821.github.com.git</span></code></pre></div><br />
+做成這麼一個腳本後，每次寫好文章，雙擊一下這個腳本就好了。還嫌麻煩？沒問題，把這個腳本拖進 <code>CLaunch</code> 這款日本軟件，然後設置一個快捷鍵，比如像我設定爲 <code>F12</code> ，以後手不必離開鍵盤，就能更新了。<br />
+本來確實就這麼簡單。不過由於 GitHub 在本文完成後一天被 <span class="caps">GFW</span> 當成關鍵字給屏蔽了，所以最後一句修改爲<br />
+<div class="highlight"><pre><code class="language-bat" data-lang="bat"><span class="k">call</span> git push https:<span class="n">//username:password@github.com/username/username.github.com/</span></code></pre></div><br />
+明白爲什麼我要把我的上傳腳本放在文件夾外面了嗎？哦，對了，還有 .gitconfig 要加上：</p>
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="lineno">1</span> <span class="p-Indicator">[</span><span class="nv">http</span><span class="p-Indicator">]</span>
+<span class="lineno">2</span> <span class="err">	</span><span class="l-Scalar-Plain">proxy = 127.0.0.1:48100</span>
+<span class="lineno">3</span> <span class="err">	</span><span class="l-Scalar-Plain">sslVerify = false</span></code></pre></div><p>具體 proxy 當然是自己設置，用 <span class="caps">SSH</span> 什麼的都可以，我比較懶惰而且很窮就用了 GSnova 。<br />
+基本上 <span class="caps">GFW</span> 這次動作對我影響不大，雖然屏蔽了 GitHub ，但我的網站綁定了域名，訪問沒有影響。上傳方面做好設置後問題不大，我本地連接 GitHub 的服務器並不快，繞一下 Heroku 的服務器再過去的影響可以忽略不計。這就令人費解了，我一個半句 Ruby 都不會寫、 Pro-Git 都沒讀過的人尚且能通過 Google （主要是看 StackOverflow ）和動腦輕鬆解決問題，這次封鎖對用戶以程序猿爲主的 GitHub 到底有什麼屁用？<br />
+果不其然， GitHub 於封鎖後兩天得到解封，這似乎是 <span class="caps">GFW</span> 史上第一個解封遭到 <span class="caps">DNS</span> 污染+關鍵字屏蔽的網站。李開復等挨踢名人當然有一定的推動作用，但最主要的原因還是 GitHub 確實沒什麼反動的東西。或許本站已經算上面比較不好的了……</p>
+<h3>撰文必備</h3>
+<p><a href="https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter">文章開頭聲明的寫法</a><br />
+<a href="http://markdown.tw/">Markdown 中文版</a><br />
+<a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a><br />
+<a href="http://txstyle.org/">Textile</a><br />
+<a href="http://www.w3schools.com/html/default.asp">html</a><br />
+<a href="http://pygments.org/docs/lexers/">代碼高亮 Pygments</a><br />
+Note: 代碼高亮的訣竅在於使用形如 {% highlight bat linenos <span>}{</span> endhighlight %} 的東西把代碼框起來。</p>
+<h3>主題</h3>
+<p>基本上他的 include 跟 <span class="caps">PHP</span> 之類動態語言是差不多的，有 Wordpress 主題製作經驗的人可以較快上手。<br />
+<a href="https://github.com/mojombo/jekyll/wiki/Sites">扒皮好去處</a><br />
+<a href="https://github.com/mojombo/jekyll/wiki/Template-Data">Jekyll 中可調用的一些網站參數</a><br />
+<a href="https://github.com/shopify/liquid/wiki/liquid-for-designers">Liquid 原版</a><br />
+<a href="https://github.com/mojombo/jekyll/wiki/Liquid-Extensions">Liquid Jekyll 加強版</a><br />
+Note: Jekyll 官方 Liquid 文檔寫的所有 <code>page</code> 的屬性都適用於 <code>post</code> 。</p>
+<h3>部署進階教程</h3>
+<p><a href="http://shawhu.org/2012-10/Jekyll-OpenShift/">Openshift</a><br />
+<a href="http://jonasforsberg.se/2012/07/22/jekyll-heroku-unicorn">Heroku</a></p>
+<h3>一些選擇</h3>
+<p>GitHub for hosting.<br />
+Git for versioning.<br />
+<span class="caps">HTML</span>, markdown and textile for typsetting.<br />
+Wuala for instant syncing.<br />
+Everedit for writing and coding.<br />
+Rimeime for inputting.<br />
+<span class="caps">CMD</span> for pushing.</p></div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script><script type="text/javascript">
+	$(document).ready(function(){
+			var isMobile = {
+				Android: function() {
+					return navigator.userAgent.match(/Android/i);
+				}
+				,BlackBerry: function() {
+					return navigator.userAgent.match(/BlackBerry/i);
+				}
+				,iOS: function() {
+					return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+				}
+				,Opera: function() {
+					return navigator.userAgent.match(/Opera Mini/i);
+				}
+				,Windows: function() {
+					return navigator.userAgent.match(/IEMobile/i);
+				}
+				,any: function() {
+					return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+				}
+			};
+
+		$('.entry a').each(function(index,element){
+			var href = $(this).attr('href');
+			if(href){
+				if(href.indexOf('#') == 0){
+				}else if ( href.indexOf('/') == 0 || href.toLowerCase().indexOf('821.github.com')>-1 ){
+				}else if ($(element).has('img').length){
+				}else{
+					$(this).attr('target','_blank');
+					$(this).addClass('external');
+				}
+			}
+		});
+
+		if($('h2').length > 2 && !isMobile.any()){
+			var h2 = [],h3 = [],tmpl = '<ul>',h2index = 0;
+
+			var findScrollableElement = function(els) {
+				for (var i = 0, argLength = arguments.length; i < argLength; i++) {
+					var el = arguments[i],
+					$scrollElement = $(el);
+					if ($scrollElement.scrollTop() > 0) {
+						return $scrollElement;
+					} else {
+						$scrollElement.scrollTop(1);
+						var isScrollable = $scrollElement.scrollTop() > 0;
+						$scrollElement.scrollTop(0);
+						if (isScrollable) {
+							return $scrollElement;
+						}
+					}
+				}
+				return [];
+			};
+
+			$.each($('h2,h3'),function(index,item){
+				if(item.tagName.toLowerCase() == 'h2'){
+					var h2item = {};
+					h2item.name = $(item).text();
+					h2item.id = 'menuIndex'+index;
+					h2.push(h2item);
+					h2index++;
+				}else{
+					var h3item = {};
+					h3item.name = $(item).text();
+					h3item.id = 'menuIndex'+index;
+					if(!h3[h2index-1]){
+						h3[h2index-1] = [];
+					}
+					h3[h2index-1].push(h3item);
+				}
+				item.id = 'menuIndex' + index
+			});
+
+			for(var i=0;i<h2.length;i++){
+				tmpl += '<li><a href="#" data-id="'+h2[i].id+'">'+h2[i].name+'</a></li>';
+				if(h3[i]){
+					for(var j=0;j<h3[i].length;j++){
+						tmpl += '<li class="h3"><a href="#" data-id="'+h3[i][j].id+'">'+h3[i][j].name+'</a></li>';
+					}
+				}
+			}
+			tmpl += '</ul>';
+
+			var $scrollable = findScrollableElement('body','html');
+			$('body').append('<div id="menuIndex"></div>');
+			$('#menuIndex').append($(tmpl)).delegate('a','click',function(e){
+				e.preventDefault();
+				var scrollNum = $(this).attr('data-top') || $('#'+$(this).attr('data-id')).offset().top;
+				//window.scrollTo(0,scrollNum-30);
+				$scrollable.animate({ scrollTop: scrollNum-30 }, 400, 'swing');
+			})
+
+			$(window).load(function(){
+				var scrollTop = [];
+				$.each($('#menuIndex li a'),function(index,item){
+					if(!$(item).attr('data-top')){
+						var top = $('#'+$(item).attr('data-id')).offset().top;
+						scrollTop.push(top);
+						$(item).attr('data-top',top);
+					}
+				});
+
+				$(window).scroll(function(){
+					var nowTop = $(window).scrollTop(),index,length = scrollTop.length;
+					if(nowTop+60 > scrollTop[length-1]){
+						index = length
+					}else{
+						for(var i=0;i<length;i++){
+							if(nowTop+60 <= scrollTop[i]){
+								index = i
+								break;
+							}
+						}
+					}
+					$('#menuIndex li').removeClass('on')
+					$('#menuIndex li').eq(index).addClass('on')
+				});
+			});
+			//用js计算屏幕的高度
+			$('#menuIndex').css('max-height',$(window).height()-80);
+		}
+	});
+</script>
+
+<div id="co-in">
+	<div id="comments"><div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'inrely';
+	//var disqus_identifier = '/Jekyll-vs-rohoh';
+	//var disqus_url = '/Jekyll-vs-rohoh';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script></div>
+	<div id="post-info">發佈於<br />2013-01-20<br /><br />
+分類<br />
+
+<span class="tag"><a href="/categories.html#挨踢">挨踢</a></span>
+<br /><br />
+標籤<br />
+
+<span class="tag"><a href="/tags.html#電腦">電腦</a></span>
+</div>
+</div>
+		</div>
+		<footer><script src="http://api.html5media.info/1.1.5/html5media.min.js"></script>
+<script>audiojs.events.ready(function() {var as = audiojs.createAll();});</script>
+<script type="text/javascript">$(document).ready(function(){$("a[rel='external'],a[rel='external nofollow']").click(function(){window.open(this.href);return false})})</script>
+<a href="/">奚適而惡乎待哉</a> | <a href="/about">存中</a> &copy 2005-2014 CC NC-ND | <a href="https://github.com/821/821.github.com">源碼</a> <a href="/archive">全站快讀</a> | <a href="/Projects">項目</a><br />
+<a href="/categories#勿忘在莒">勿忘在莒<span class="upper">4</span></a> <a href="/categories#自選集">自選集<span class="upper">21</span></a> <a href="/categories#網誌">網誌<span class="upper">74</span></a> <a href="/categories#隻言片語">隻言片語<span class="upper">3</span></a> <a href="/categories#挨踢">挨踢<span class="upper">11</span></a>  <a href="/Notes">筆記</a></footer>
+	</body>
+</html>
